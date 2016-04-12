@@ -1,4 +1,3 @@
-
 Game = {};
 var w = 600;
 var h = 400;
@@ -16,13 +15,13 @@ Game.Boot.prototype = {
     }
 };
 
-Game.Load = function (game) {}:
+Game.Load = function (game) {};
 
 Game.Load.prototype = {
     preload: function() {
         label2 = game.add.text(Math.floor(w/2)+0.5, Math.floor(h/2)-15+0.5, 'loading...', { font: '30px Arial', fill: '#fff' });
         label2.anchor.setTo(0.5, 0.5);
-        label3 = ame.add.text(Math.floor(w/2)+0.5, Math.floor(h/2)-30+0.5, game.load.progress + "%", { font: '30px Arial', fill: '#fff' });
+        label3 = game.add.text(Math.floor(w/2)+0.5, Math.floor(h/2)-30+0.5, game.load.progress + "%", { font: '30px Arial', fill: '#fff' });
         //init loading bar
 
         //load game assets

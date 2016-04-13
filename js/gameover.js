@@ -6,12 +6,8 @@ Game.Over.prototype = {
         game.camera.setPosition(0,0);
 
         this.cursor = this.game.input.keyboard.createCursorKeys();
-        var logo = game.add.sprite(w/2, 150, 'success');
-        logo.anchor.setTo(0.5, 0.5);
-        logo.scale.setTo(0, 0);
-        game.add.tween(logo.scale).to({ x:1, y:1 }, 1000, Phaser.Easing.Bounce.Out).start();
 
-        var label = game.add.text(w/2, h-100, 'you died '+dead+' times\n\npress the UP arrow key to restart', { font: '25px Arial', fill: '#fff', align: 'center' });
+        var label = game.add.text(w/2, h-100, 'you died.\npress UP to restart', { font: '25px Arial', fill: '#fff', align: 'center' });
         label.anchor.setTo(0.5, 0.5);
         label.alpha = 0;
         game.add.tween(label).delay(500).to({ alpha: 1}, 500).start();

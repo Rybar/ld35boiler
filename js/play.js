@@ -1,15 +1,13 @@
 Game.Play = function (game) { };
 
 Game.Play.prototype = {
-    t: {},
+      
     create: function () {
 
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
         game.stage.backgroundColor = '#2d2d2d';
 
-        //  This sprite was created with the Phaser Gen Paint app
-        //  also available in the Phaser Examples repo and on the Phaser site.
 
         var dudeData = [
             '.......3.....',
@@ -38,6 +36,21 @@ Game.Play.prototype = {
         game.physics.arcade.enable(player);
 
         cursors = game.input.keyboard.createCursorKeys();
+        
+        tileTexture = game.add.bitmapData(64, 32);
+        
+        tileTexture.context.fillStyle = "rgb(0,0,0,0)";
+                        tileTexture.context.fillRect(0,0,32,32);
+                        tileTexture.context.fillStyle = "white";
+                        tileTexture.context.fillRect(32,0,32,32);
+        tileTexture.generateTexture('tileimage');
+        
+        map = game.add.tilemap();
+        map.create('level0', 16,16,32,32);
+        //map.create('map1', 16, 16, 32, 32);
+        back = map.createBlankLayer("back",16,16,32,32);
+        
+        map.addTilesetImage('tileimage');
 
     },
 

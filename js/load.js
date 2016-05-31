@@ -1,6 +1,6 @@
 Game = {};
-var w = 600;
-var h = 400;
+var w = 1000;
+var h = 800;
 
 Game.Boot = function (game) {};
 
@@ -28,7 +28,7 @@ Game.Load.prototype = {
     },
 
     create: function () {
-        game.state.start('Menu');
+        game.state.start('Play');
     }
 }
 
